@@ -13,6 +13,10 @@ if (Meteor.is_client) {
     
     }
   }
+
+  Template.template_name.deals = function() {
+    return Deals.find({active: 1}, {limit: 15}).fetch();
+  }
 }
 
 if (Meteor.is_server) {
