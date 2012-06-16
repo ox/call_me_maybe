@@ -37,8 +37,8 @@ if (Meteor.is_client) {
     }
   }
 
-  Template.template_name.deals = function() {
-    return Deals.find({active: 1}, {limit: 15}).fetch();
+  Template.deals.deals = function() {
+    return Deals.find({active: 1});
   }
 }
 
@@ -64,7 +64,9 @@ function getDealsFromYipit() {
       deal = Deals.findOne({'business name': cd.business.name, 
                     'end_date': cd.end_date,
                     'active': cd.active});
-      if(deal) {
+      console.log(deal);
+
+      if(deal === undefined) {
         console.log("adding deal from " + cd.business.name);
         Deals.insert(cd);
       }
@@ -87,13 +89,23 @@ var add_test_users = function() {
 }
 
 function showLoginForm() {
+  $('#login').show();
+  $('#deals').hide();
   $('.signup').hide();
   $('#see-other-form').html('<h6><a href="#" onclick="showSignupForm(); return false;">(New user?)</a></h6>');
   $('header').html('<h1>Welcome back!</h1>')
 }
 
 function showSignupForm() {
+  $('#login').hide();
+  $('#deals').hide();
   $('.signup').show();
   $('#see-other-form').html('<h6><a href="#" onclick="showLoginForm(); return false;">(Already signed up?)</a></h6>');
   $('header').html('<h1>Tell us a little about yourself!</h1>');
+}
+
+function showDeals() {
+  $('#login').hide();
+  $('.signup').show();
+  $('#see-other-form').hide();
 }

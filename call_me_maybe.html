@@ -8,6 +8,34 @@
 
 <template name="login-x">
   <div id="container">
+    <header class="jumbotron">
+      <h1>CheapMob</h1>
+    </header>
+    <div class="row">
+      {{> deals}}
+    </div>
+  </div>
+</body>
+
+<template name="deals">
+  <div class="deals">
+    <ul class="thumbnails">
+      {{#each deals}}
+        {{#if active}}
+          <li class="span3">
+            <div class="thumbnail" style="height: 250px;">
+              <img src="{{images.image_small}}" alt="" style="width: 260px; height: 180px">
+              <h4>{{title}}</h4>
+              <p></p>
+            </div>
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="login">
   	<br>
   	<span id="see-other-form"><h6><a href="#" onclick="showLoginForm(); return false;">(Already signed up?)</a></h6></span>
     <form id="sign-up">
@@ -32,7 +60,7 @@
     		<input id="name-field" name="username" autofocus/>
     		<input id="password-field" name="password" placeholder="password"/>
     	</aside>
-		<button id="submit-button" class="btn btn-primary" type="submit">
+		<button id="submit-button" onclick="showDeals();" class="btn btn-primary" type="submit">
 			<h2>Cheap, fun activities are on the way!</h2>
 		</button>
 	</form>
