@@ -3,8 +3,8 @@
 </head>
 
 <body>
-  {{> header}}
-  {{> login}}
+<!--   {{> header}}
+  {{> login}} -->
   {{> deals}}
 </body>
 
@@ -20,10 +20,7 @@
 	    	<div id="password">
 	    		My password is
 	    	</div>
-	    	<div id="number">
-	    		My phone number is
-	    	</div>
-	    	<div id="gender">
+	    	<div id="gender" class="signup">
 	    		<div id="i-am-a">
 		    		I am a
 		    	</div>
@@ -31,39 +28,13 @@
 	    			<button class="btn">Guy</button>
 	    			<button class="btn">Girl</button>
 	    		</div>
-	    		<div id="looking-for">
-		    		looking for
-		    	</div>
-	    		<div id="looking-for-button" class="btn-group" data-toggle="buttons-radio">
-	    			<button class="btn">Guy</button>
-	    			<button class="btn">Girl</button>
-	    			<button class="btn">Anyone</button>
-	    		</div>
 	    	</div>
 	    </div>
     	<aside id="fields">
     		<input id="name-field" name="username" autofocus/>
     		<input id="password-field" name="password" placeholder="password"/>
-    		<input id="number-field" name="number" placeholder="555-555-5555"/>
     	</aside>
-		<button id="submit-button" class="btn btn-primary" type="submit">
-			<h2>Cheap, fun activities are on the way!</h2>
-		</button>
-	</form>
-	<form id="login" class="hide">
-		<div id="form-text">
-			<div id="name">
-				My name is
-			</div>
-			<div id="password">
-				My password is
-			</div>
-		</div>
-    	<aside id="fields">
-    		<input id="name-field" name="username" autofocus/>
-    		<input id="password-field" name="password" placeholder="password"/>
-    	</aside>
-		<button id="submit-button" onsubmit="showDeals();" class="btn btn-primary" type="submit">
+		<button id="submit-button" onclick="showDeals();" class="btn btn-primary" type="submit">
 			<h2>Cheap, fun activities are on the way!</h2>
 		</button>
 	</form>
@@ -72,7 +43,7 @@
 
 <template name="header">
   	<header>
-    	<h1>TELL US A LITTLE ABOUT YOURSELF</h1>
+    	<h1>Tell us a little about yourself!</h1>
 	</header>
 </template>
 
