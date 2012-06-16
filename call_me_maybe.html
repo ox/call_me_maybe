@@ -3,12 +3,10 @@
 </head>
 
 <body>
-  {{> header}}
   {{> user_plate}}
-  {{> login}}
 </body>
 
-<template name="login">
+<template name="login-x">
   <div id="container">
   	<br>
   	<span id="see-other-form"><h6><a href="#" onclick="showLoginForm(); return false;">(Already signed up?)</a></h6></span>
@@ -52,7 +50,6 @@
 	{{/if}}
 </template>
 
-
 <!--User_greeting + logout option -->
 <template name="user_greeting">
 	<div class="user_greeting">
@@ -62,16 +59,19 @@
 
 
 <!-- Login -->
-<template name="header">
+<template name="header-x">
   	<header>
     	<h1>Tell us a little about yourself!</h1>
 	</header>
 </template>
 
 <template name="login_form">
-  <div class="login_form">
-    <input name="username" placeholder="username"/>
-    <input name="password" placeholder="password" type="password"/>
-    <input class="btn submit" type="submit" name="login" text="login"/>
+  <div class="login_form shadow">
+    <input id="username" name="username" placeholder="username"/>
+    <input id="password" name="password" placeholder="password" type="password"/>
+    <!-- <input class="btn submit" type="submit" name="login" text="login"/> -->
+	<button id="submit-button" class="btn btn-primary" type="submit">
+		Sign in
+	</button>
   </div>
 </template>
