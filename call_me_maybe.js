@@ -1,26 +1,38 @@
+Users = new Meteor.Collection("users");
+Deals = new Meteor.Collection("deals");
+
 if (Meteor.is_client) {
   Meteor.startup(function() {
     if (typeof console !== 'undefined') {
 
-    }  
+    }
   });
 
-  Template.hello.greeting = function () {
-    return "Welcome to call_me_maybe.";
-  };
-
-  Template.hello.events = {
-    'click input' : function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
+  Template.login_form.events = {
+    'click .submit': function() {
+      var username = document.getElementsByName('username')[0].value;
+      var password = document.getElementsByName('password')[0].value;
+      console.log("trying " + username + ", " + password);
+    
     }
-  };
+  }
 }
 
 if (Meteor.is_server) {
   Meteor.startup(function () {
     // code to run on server at startup
-    console.log("stuff");
+    add_test_users();
   });
+}
+
+var add_test_users = function() {
+  if(Users.find().count() === 0) {
+      for(var i = 0; i < 15; i++) {
+        Users.insert({username: "test_user_"+i,
+                      password: 'foo',
+                      first_name: 'Test',
+                      last_name: 'User'+i,
+                      age: Math.floor(Math.random()*10)*5});
+      }
+    }
 }
