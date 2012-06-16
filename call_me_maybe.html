@@ -1,15 +1,22 @@
 <head>
-  <title>call_me_maybe</title>
+  <title>CheepMob</title>
 </head>
 
 <body>
-  {{> hello}}
+  {{> header}}
+  {{> login_form}}
 </body>
 
-<template name="hello">
+<template name="header">
   <div class="hello">
-    <h1>Hello World!</h1>
-    {{greeting}}
-    <input type="button" value="Click" />
+    <h1>CheepMob</h1>
+  </div>
+</template>
+
+<template name="login_form">
+  <div class="login_form">
+    <input name="username" placeholder="username"/>
+    <input name="password" placeholder="password" type="password"/>
+    <input class="btn submit" type="submit" name="login" text="login"/>
   </div>
 </template>
