@@ -4,6 +4,7 @@
 
 <body>
   {{> user_plate}}
+  {{> login}}
 </body>
 
 <template name="login-x">
@@ -15,7 +16,7 @@
       {{> deals}}
     </div>
   </div>
-</body>
+</template>
 
 <template name="deals">
   <div class="deals">
@@ -36,9 +37,7 @@
 </template>
 
 <template name="login">
-  	<br>
-  	<span id="see-other-form"><h6><a href="#" onclick="showLoginForm(); return false;">(Already signed up?)</a></h6></span>
-    <form id="sign-up">
+    <form id="sign-up" class="hide">
     	<div id="form-text">
 	    	<div id="name">
 	    		My name is
@@ -46,7 +45,7 @@
 	    	<div id="password">
 	    		My password is
 	    	</div>
-	    	<div id="gender" class="signup">
+	    	<div id="gender">
 	    		<div id="i-am-a">
 		    		I am a
 		    	</div>
@@ -60,9 +59,9 @@
     		<input id="name-field" name="username" autofocus/>
     		<input id="password-field" name="password" placeholder="password"/>
     	</aside>
-		<button id="submit-button" onclick="showDeals();" class="btn btn-primary" type="submit">
-			<h2>Cheap, fun activities are on the way!</h2>
-		</button>
+    	<button id="join-button" class="btn btn-primary submit" type="submit" onclick="submitSignup()">
+    		Join!
+    	</button>
 	</form>
   </div>
 </template>
@@ -81,7 +80,9 @@
 <!--User_greeting + logout option -->
 <template name="user_greeting">
 	<div class="user_greeting">
-			<h2>Back on the prowl, {{username}}? | <a href="#" id="logout">Logout </a> </h2> 
+		<div class="login_form shadow">
+			<span class="white"><h2>Back on the prowl, {{username}}? | <a href="#" id="logout">Logout </a> </h2></span>
+		</div>
 	</div>
 </template>
 
@@ -96,10 +97,13 @@
 <template name="login_form">
   <div class="login_form shadow">
     <input id="username" name="username" placeholder="username"/>
-    <input id="password" name="password" placeholder="password" type="password"/>
+    <input id="signup-password" name="password" placeholder="password" type="password"/>
     <!-- <input class="btn submit" type="submit" name="login" text="login"/> -->
-	<button id="submit-button" class="btn btn-primary" type="submit">
-		Sign in
+	<button id="submit-button" class="btn btn-primary submit" type="submit">
+		Log in
+	</button>
+	<button id="sign-up-button" class="btn btn-success" type="button" onclick="showSignupForm();">
+		Or sign up here!
 	</button>
   </div>
 </template>

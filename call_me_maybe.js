@@ -96,16 +96,35 @@ function showLoginForm() {
   $('header').html('<h1>Welcome back!</h1>')
 }
 
-function showSignupForm() {
-  $('#login').hide();
-  $('#deals').hide();
-  $('.signup').show();
-  $('#see-other-form').html('<h6><a href="#" onclick="showLoginForm(); return false;">(Already signed up?)</a></h6>');
-  $('header').html('<h1>Tell us a little about yourself!</h1>');
-}
+// function showSignupForm() {
+//   $('#login').hide();
+//   $('#deals').hide();
+//   $('.signup').show();
+//   $('#see-other-form').html('<h6><a href="#" onclick="showLoginForm(); return false;">(Already signed up?)</a></h6>');
+//   $('header').html('<h1>Tell us a little about yourself!</h1>');
+// }
 
 function showDeals() {
   $('#login').hide();
   $('.signup').show();
   $('#see-other-form').hide();
 }
+
+function showSignupForm() {
+  $('#sign-up').show();
+}
+
+function submitSignup() {
+  $('#sign-up').hide();
+  signUp();
+}
+
+function signUp() {
+  var username = document.getElementsByName('name')[0].value;
+  var password = document.getElementsByName('password')[0].value;
+  var gender = document.getElementsByName('gender')[0].value;
+  var userid = Users.insert({'username':username,'password': password,'gender': gender});
+  Session.set('uid',userid);
+  Session.set('user',Users.findOne({'_uid':userid}));
+  console.log("We added: " + userid);
+ } 
