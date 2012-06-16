@@ -64,7 +64,9 @@ function getDealsFromYipit() {
       deal = Deals.findOne({'business name': cd.business.name, 
                     'end_date': cd.end_date,
                     'active': cd.active});
-      if(deal) {
+      console.log(deal);
+
+      if(deal === undefined) {
         console.log("adding deal from " + cd.business.name);
         Deals.insert(cd);
       }

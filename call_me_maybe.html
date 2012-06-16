@@ -3,11 +3,36 @@
 </head>
 
 <body>
-  {{> deals}}
+  <div class="container">
+    <header class="jumbotron">
+      <h1>CheapMob</h1>
+    </header>
+    <div class="row">
+      {{> deals}}
+    </div>
+  </div>
 </body>
 
+<template name="deals">
+  <div class="deals">
+    <ul class="thumbnails">
+      {{#each deals}}
+        {{#if active}}
+          <li class="span3">
+            <div class="thumbnail" style="height: 250px;">
+              <img src="{{images.image_small}}" alt="" style="width: 260px; height: 180px">
+              <h4>{{title}}</h4>
+              <p></p>
+            </div>
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
 <template name="login">
-  <div id="container">
+  
   	<br>
   	<span id="see-other-form"><h6><a href="#" onclick="showLoginForm(); return false;">(Already signed up?)</a></h6></span>
     <form id="sign-up">
@@ -72,23 +97,4 @@
     <input name="password" placeholder="password" type="password"/>
     <input class="btn submit" type="submit" name="login" text="login"/>
   </div>
-</template>
-
-<template name="deals">
-	<div class="deals">
-	<h3>Find a Deal!</h3>
-	{{#each deals}}
-		{{#if active}}
-		<ul class="thumbnails">
-		  <li class="span3">
-		    <div class="thumbnail">
-		      <img src="{{images.image_small}}" alt="">
-		      <h5>{{title}}</h5>
-		      <p></p>
-		    </div>
-		  </li>
-		</ul>
-		{{/if}}
-	{{/each}}
-	</div>
 </template>
