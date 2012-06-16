@@ -56,3 +56,15 @@ var add_test_users = function() {
       }
     }
 }
+
+function showLoginForm() {
+  $('#login').show();
+  $('#sign-up').hide();
+  $('#see-other-form').html('<h6><a href="#" onclick="showSignupForm(); return false;">(New user?)</a></h6>');
+}
+
+function showSignupForm() {
+  $('#login').hide();
+  $('#sign-up').show();
+  $('#see-other-form').html('<h6><a href="#" onclick="showLoginForm(); return false;">(Already signed up?)</a></h6>');
+}
