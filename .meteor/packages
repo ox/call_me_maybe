@@ -8,3 +8,4 @@ bootstrap
 session
 mongo-livedata
 jquery
+http

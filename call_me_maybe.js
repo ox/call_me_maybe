@@ -3,8 +3,6 @@ Deals = new Meteor.Collection("deals");
 
 if (Meteor.is_client) {
   Meteor.startup(function() {
-    // $.support.cors = true;
-    getDealsFromYipit();
   });
 
   Template.login_form.events = {
@@ -20,31 +18,24 @@ if (Meteor.is_client) {
 if (Meteor.is_server) {
   Meteor.startup(function () {
     add_test_users();
+    getDealsFromYipit();
   });
 }
 
 function getDealsFromYipit() {
-  var yipitURL = "http://api.yipit.com/v1/deals/?tag=restaurants,bar-club&division=new-york&limit=300&key=WfNYJS42NRP8V6nQ";
-  // var headers = new Array();
-  // var allowedHosts = new Array("http://localhost:3000");
-  // headers["Access-Control-Allow-Origin"] = "http://localhost:3000";
+    var yipitURL = "http://api.yipit.com/v1/deals/?tag=restaurants,bar-club&division=new-york&limit=5&key=WfNYJS42NRP8V6nQ";
 
-  $.ajax({
-    type: "get",
-    url: yipitURL,
-    dataType: "json",
-    beforeSend: setHeader,
-    headers: {"Access-Control-Allow-Origin":"http://localhost:3000",
-              "Access-Control-Allow-Headers":"X-Requested-With"},
-    success: function(response) {
-      console.log(response);
+    Meteor.http.get(yipitURL, {}, function(error, result){
+    var deals = result.data.response.deals;
+    console.log("found " + deals.length + " deals!");
+
+    console.log("sample deal: ");
+    console.log(deals[0]);
+
+    for(var i = 0; i < deals.length; i++) {
     }
   });
 }
-
-function setHeader(xhr) {
-     xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
- }
 
 var add_test_users = function() {
   if(Users.find().count() === 0) {
