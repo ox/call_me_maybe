@@ -29,7 +29,7 @@
 <!--User_greeting + logout option -->
 <template name="user_greeting">
 	<div class="user_greeting">
-			<h2>Back on the prowl, {{username}}? | <a href="#" id="logout">Logout </a> </h2> 
+			<h2>Back on the prowl, {{username}}? | <a href="#">Logout </a> </h2> 
 	</div>
 </template>
 

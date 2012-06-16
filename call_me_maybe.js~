@@ -24,7 +24,7 @@ if (Meteor.is_client) {
 				Session.set('user',undefined);
 		}
 
-	};
+	}
 
   Template.login_form.events = {
     'click .submit': function() {
