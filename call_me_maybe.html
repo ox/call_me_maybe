@@ -4,19 +4,82 @@
 
 <body>
   {{> header}}
-  {{> login_form}}
+
+  {{> body}}
+
+  {{> footer}}
 </body>
 
 <template name="header">
-  <div class="hello">
-    <h1>CheepMob</h1>
+  <div class="hello" style="padding: 15px">
+    <h1>Congratulations, you have bought tickets for a Two-Hour Private Flight Lesson!</h1>
+    <hr />
   </div>
 </template>
 
-<template name="login_form">
-  <div class="login_form">
-    <input name="username" placeholder="username"/>
-    <input name="password" placeholder="password" type="password"/>
-    <input class="btn submit" type="submit" name="login" text="login"/>
+
+
+<template name="body">
+  <div class="container">
+
+    <div class="row">
+      <div class="span8">
+        <p class="lead">
+          There are several others who have also purchased these deal.<br />
+          We have matched you with 3 people.
+        </p>
+
+        <br />
+
+        <img src="http://placehold.it/100x100" align="left" style="padding-right: 10px"><b>Alyssa Garrett</b><br />
+        <h6>3 mutual friends</h6>
+        Josiah King, Gertrude Stevens, Judith Laury
+        <h6>1 shared interest</h6>
+        Knitting
+
+        <hr />
+
+        <img src="http://placehold.it/100x100" align="left" style="padding-right: 10px"><b>Ryan Gosling</b><br />
+        <h6>2 mutual friends</h6>
+        Justin Bieber, Rachel McAdams
+        <h6>2 shared interest</h6>
+        Jersey Shore, Remodeling houses
+
+        <hr />
+
+        <img src="http://placehold.it/100x100" align="left" style="padding-right: 10px"><b>Ryan Gosling</b><br />
+        <h6>2 mutual friends</h6>
+        Justin Bieber, Rachel McAdams
+        <h6>2 shared interest</h6>
+        Jersey Shore, Remodeling houses
+
+
+
+
+      </div>
+
+
+      <div class="span4">
+        <h2>We've created a customized group texting phone number just for the three of you.</h2><hr /><p />
+
+        <p class="lead"><font size="6.5">(323) 329-2190</font></p>
+
+        <button class="btn"><h6>Send SMS via Google Voice</h6></button>
+
+        <hr />
+
+        
+
+      </div>
+
+
+  </div>
   </div>
 </template>
+
+
+<template name="footer">
+  <hr />
+  <p style="padding: 20px; margin-left: 70px">2012, CheepMob</p>
+</template>
+
