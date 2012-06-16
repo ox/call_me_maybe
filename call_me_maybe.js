@@ -14,9 +14,9 @@ if (Meteor.is_client) {
     }
   }
 
-  Template.template_name.deals = function() {
-    return Deals.find({active: 1}, {limit: 15}).fetch();
-  }
+  // Template.template_name.deals = function() {
+  //   return Deals.find({active: 1}, {limit: 15}).fetch();
+  // }
 }
 
 if (Meteor.is_server) {
@@ -38,10 +38,10 @@ function getDealsFromYipit() {
 
     for(var i = 0; i < deals.length; i++) {
       cd = deals[i];
-      deal = Deals.find({'business id': cd.business.id, 
+      deal = Deals.findOne({'business name': cd.business.name, 
                     'end_date': cd.end_date,
-                    'active': cd.active}, {limit: 1}).fetch();
-      if(deal !== []) {
+                    'active': cd.active});
+      if(deal) {
         console.log("adding deal from " + cd.business.name);
         Deals.insert(cd);
       }
