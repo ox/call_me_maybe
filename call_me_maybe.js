@@ -64,7 +64,7 @@ var add_test_users = function() {
 function showLoginForm() {
   $('.signup').hide();
   $('#see-other-form').html('<h6><a href="#" onclick="showSignupForm(); return false;">(New user?)</a></h6>');
-  $('header').html('<h1>We know who you are!</h1>')
+  $('header').html('<h1>Welcome back!</h1>')
 }
 
 function showSignupForm() {
