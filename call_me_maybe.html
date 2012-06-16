@@ -5,6 +5,7 @@
 <body>
   {{> header}}
   {{> login}}
+  {{> deals}}
 </body>
 
 <template name="login">
@@ -62,7 +63,7 @@
     		<input id="name-field" name="username" autofocus/>
     		<input id="password-field" name="password" placeholder="password"/>
     	</aside>
-		<button id="submit-button" class="btn btn-primary" type="submit">
+		<button id="submit-button" onsubmit="showDeals();" class="btn btn-primary" type="submit">
 			<h2>Cheap, fun activities are on the way!</h2>
 		</button>
 	</form>
@@ -81,5 +82,23 @@
     <input name="password" placeholder="password" type="password"/>
     <input class="btn submit" type="submit" name="login" text="login"/>
   </div>
+</template>
 
+<template name="deals">
+	<div class="deals">
+	<h3>Find a Deal!</h3>
+	{{#each deals}}
+		{{#if active}}
+		<ul class="thumbnails">
+		  <li class="span3">
+		    <div class="thumbnail">
+		      <img src="{{images.image_small}}" alt="">
+		      <h5>{{title}}</h5>
+		      <p></p>
+		    </div>
+		  </li>
+		</ul>
+		{{/if}}
+	{{/each}}
+	</div>
 </template>
