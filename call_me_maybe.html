@@ -5,14 +5,70 @@
 <body>
   {{> header}}
   {{> user_plate}}
+  {{> login}}
 </body>
 
-<template name="header">
-  <div class="hello">
-    <h1>CheepMob</h1>
+<template name="login">
+  <div id="container">
+  	<br>
+  	<span id="see-other-form"><h6><a href="#" onclick="showLoginForm(); return false;">(Already signed up?)</a></h6></span>
+    <form id="sign-up">
+    	<div id="form-text">
+	    	<div id="name">
+	    		My name is
+	    	</div>
+	    	<div id="password">
+	    		My password is
+	    	</div>
+	    	<div id="number">
+	    		My phone number is
+	    	</div>
+	    	<div id="gender">
+	    		<div id="i-am-a">
+		    		I am a
+		    	</div>
+	    		<div id="i-am-a-button" class="btn-group" data-toggle="buttons-radio">
+	    			<button class="btn">Guy</button>
+	    			<button class="btn">Girl</button>
+	    		</div>
+	    		<div id="looking-for">
+		    		looking for
+		    	</div>
+	    		<div id="looking-for-button" class="btn-group" data-toggle="buttons-radio">
+	    			<button class="btn">Guy</button>
+	    			<button class="btn">Girl</button>
+	    			<button class="btn">Anyone</button>
+	    		</div>
+	    	</div>
+	    </div>
+    	<aside id="fields">
+    		<input id="name-field" name="username" autofocus/>
+    		<input id="password-field" name="password" placeholder="password"/>
+    		<input id="number-field" name="number" placeholder="555-555-5555"/>
+    	</aside>
+		<button id="submit-button" class="btn btn-primary" type="submit">
+			<h2>Cheap, fun activities are on the way!</h2>
+		</button>
+	</form>
+	<form id="login" class="hide">
+		<div id="form-text">
+			<div id="name">
+				My name is
+			</div>
+			<div id="password">
+				My password is
+			</div>
+		</div>
+    	<aside id="fields">
+    		<input id="name-field" name="username" autofocus/>
+    		<input id="password-field" name="password" placeholder="password"/>
+    	</aside>
+		<button id="submit-button" class="btn btn-primary" type="submit">
+			<h2>Cheap, fun activities are on the way!</h2>
+		</button>
+	</form>
   </div>
 </template>
-
 
 
 <!-- This section contains user validation routines -->
@@ -35,6 +91,12 @@
 
 
 <!-- Login -->
+<template name="header">
+  	<header>
+    	<h1>TELL US A LITTLE ABOUT YOURSELF</h1>
+	</header>
+</template>
+
 <template name="login_form">
   <div class="login_form">
     <input name="username" placeholder="username"/>
