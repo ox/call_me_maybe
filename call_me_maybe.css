@@ -1,1 +1,60 @@
-/* CSS declarations go here */
+html, body {
+  font-family: proxima-nova, sans-serif;
+  font-size: 1.1em;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+header {
+  margin: 100px 0px 0px 0px;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+
+#sign-in {
+  height: 130px;
+  margin: 100px auto;
+  width: 500px;
+}
+
+#fields {
+  height: auto;
+  position: relative;
+  width: auto;
+}
+
+#form-text {
+  height: 130px;
+  position: absolute;
+  width: 300px;
+}
+
+#name, #name-field {
+  position: absolute;
+  top: 0px;
+}
+
+#number, #number-field {
+  position: absolute;
+  top: 50px;
+}
+
+#name {
+  top: 10px;
+}
+
+#number {
+  top: 60px;
+}
+
+#name-field, #number-field {
+  right: 0px;
+}
+
+#gender {
+  position: absolute;
+  bottom: 5px;
+}
