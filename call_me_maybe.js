@@ -33,6 +33,14 @@ function getDealsFromYipit() {
     console.log(deals[0]);
 
     for(var i = 0; i < deals.length; i++) {
+      cd = deals[i];
+      deal = Deals.find({'business id': cd.business.id, 
+                    'end_date': cd.end_date,
+                    'active': cd.active}, {limit: 1}).fetch();
+      if(deal !== []) {
+        console.log("adding deal from " + cd.business.name);
+        Deals.insert(cd);
+      }
     }
   });
 }
