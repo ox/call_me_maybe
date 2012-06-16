@@ -37,14 +37,23 @@ if (Meteor.is_client) {
     }
   }
 
+<<<<<<< HEAD
+  //End login
+
+
+=======
   Template.template_name.deals = function() {
     return Deals.find({active: 1}, {limit: 15}).fetch();
   }
+>>>>>>> f32444acd5031bd19bdb357dd43789a44e0582f4
 }
 
 if (Meteor.is_server) {
   Meteor.startup(function () {
     add_test_users();
+<<<<<<< HEAD
+
+=======
     getDealsFromYipit();
   });
 }
@@ -61,14 +70,15 @@ function getDealsFromYipit() {
 
     for(var i = 0; i < deals.length; i++) {
       cd = deals[i];
-      deal = Deals.findOne({'business name': cd.business.name, 
+      deal = Deals.find({'business id': cd.business.id, 
                     'end_date': cd.end_date,
-                    'active': cd.active});
-      if(deal) {
+                    'active': cd.active}, {limit: 1}).fetch();
+      if(deal !== []) {
         console.log("adding deal from " + cd.business.name);
         Deals.insert(cd);
       }
     }
+>>>>>>> f32444acd5031bd19bdb357dd43789a44e0582f4
   });
 
   
@@ -85,15 +95,18 @@ var add_test_users = function() {
       }
     }
 }
+<<<<<<< HEAD
+=======
 
 function showLoginForm() {
-  $('.signup').hide();
+  $('#login').show();
+  $('#sign-up').hide();
   $('#see-other-form').html('<h6><a href="#" onclick="showSignupForm(); return false;">(New user?)</a></h6>');
-  $('header').html('<h1>Welcome back!</h1>')
 }
 
 function showSignupForm() {
-  $('.signup').show();
+  $('#login').hide();
+  $('#sign-up').show();
   $('#see-other-form').html('<h6><a href="#" onclick="showLoginForm(); return false;">(Already signed up?)</a></h6>');
-  $('header').html('<h1>Tell us a little about yourself!</h1>');
 }
+>>>>>>> f32444acd5031bd19bdb357dd43789a44e0582f4
