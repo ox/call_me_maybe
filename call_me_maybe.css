@@ -29,7 +29,7 @@ h1 {
 #form-text {
   height: 130px;
   position: absolute;
-  width: 300px;
+  width: 500px;
 }
 
 #name, #name-field {
@@ -57,4 +57,30 @@ h1 {
 #gender {
   position: absolute;
   bottom: 5px;
+  text-align: left;
+  width: 500px;
+}
+
+#i-am-a {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+#i-am-a-button {
+  position: absolute;
+  left: 90px;
+  bottom: 0px;
+}
+
+#looking-for {
+  position: absolute;
+  left: 220px;
+  bottom: 0px;
+}
+
+#looking-for-button {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
 }
