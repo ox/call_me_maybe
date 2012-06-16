@@ -1,5 +1,5 @@
 html, body {
-  font-family: proxima-nova, sans-serif;
+  font-family: palantino, serif;
   font-size: 1.1em;
   height: 100%;
   width: 100%;
@@ -14,8 +14,8 @@ h1 {
   font-size: 2.6em;
 }
 
-#sign-up, #login {
-  height: 180px;
+#sign-up {
+  height: 130px;
   margin: 100px auto;
   width: 500px;
 }
@@ -27,7 +27,7 @@ h1 {
 }
 
 #form-text {
-  height: 180px;
+  height: 130px;
   position: absolute;
   width: 500px;
 }
@@ -42,11 +42,6 @@ h1 {
   top: 50px;
 }
 
-#number, #number-field {
-  position: absolute;
-  top: 100px;
-}
-
 #name {
   top: 10px;
 }
@@ -55,11 +50,7 @@ h1 {
   top: 60px;
 }
 
-#number {
-  top: 108px;
-}
-
-#name-field, #number-field, #password-field {
+#name-field, #password-field {
   right: 0px;
 }
 
@@ -78,22 +69,10 @@ h1 {
 
 #i-am-a-button {
   position: absolute;
-  left: 90px;
-  bottom: 0px;
-}
-
-#looking-for {
-  position: absolute;
-  left: 220px;
-  bottom: 0px;
-}
-
-#looking-for-button {
-  position: absolute;
   right: 0px;
   bottom: 0px;
 }
 
 #submit-button {
-  margin: 250px 0px 0px 0px;
+  margin: 200px 0px 0px 0px;
 }
